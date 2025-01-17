@@ -1,0 +1,113 @@
+:root {
+    --dark-background: #000B58;
+    --dark-background2:rgb(3, 16, 119);
+    --hover: #000f7c;
+    --clicked: #0013a3;
+    --light-background: #003161;
+    --border-color: #006A67;
+    --font-color: #FFF4B7;
+}
+
+/* 4 child elements */
+.profile-page-container {
+    /* border: 3px solid rgb(250, 0, 0); */
+    background-color: var(--dark-background2);
+    padding: 10px;
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 20px;
+    border-radius: 15px
+}
+
+/* CHILD - ELEMENT : 1 */
+.profile-header {
+    text-align: center;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid red;
+}
+
+/* CHILD - ELEMENT : 2 */
+.profile-image-uploader {
+    margin-bottom: 20px;
+    border: 1px solid red;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px
+}
+
+
+.icon {
+    width: 200px;
+    height: 200px;
+    border: 3px solid green;
+
+    position: relative
+}
+
+.avatar-pic {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.camera {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    font-size: 1.2em;
+    cursor: pointer;
+
+    padding: 5px;
+    background-color: var(--font-color);
+    color: var(--dark-background2);
+    border-radius: 50%;
+}
+
+.camera:hover{
+    transform: scale(1.03);
+}
+
+.camera:active{
+    transform: scale(0.95);
+}
+.hidden {
+    display: none;
+}
+
+/* ELEMENT : 3 */
+/* this element has 2 child elements */
+.profile-member-information{
+    border: 1px solid red;
+    margin: 10px 0;
+    padding: 10px
+}
+
+/* child-element 1 */
+.member-info-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid var(--border-color);
+    border-radius: 5px;
+    padding: 5px;
+    
+}
+
+.member-info-group h4, .member-info-group p{
+    margin: 0 5px;
+}
+
+/* ELEMENT : 4 */
+/* this element has 2 child elements */
+.account-information {
+    border: 1px solid red;
+    margin: 30px 0;
+    padding: 10px
+}
+
+.active {
+    color: greenyellow;
+}

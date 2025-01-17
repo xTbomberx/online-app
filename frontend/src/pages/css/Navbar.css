@@ -1,0 +1,92 @@
+:root {
+    --dark-background: #000B58;
+    --hover: #000f7c;
+    --clicked: #0013a3;
+
+    --light-background: #003161;
+    --border-color: #006A67;
+    --font-color: #FFF4B7;
+}
+
+
+.header-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+
+    background-color: var(--border-color);
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* 2 CHILD ELEMENTs = RIGHT/LEFT SIDES */
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 99%;
+}
+
+.nav-left, .nav-right {
+    display: flex;
+    align-items: center;
+}
+
+.nav-right {
+    margin-right: 10px;
+}
+.nav-link {
+    color: var(--dark-background);
+    text-decoration: none;
+    margin-right: 20px;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+
+.nav-link:hover{
+    color: var(--font-color)
+}
+
+.nav-right button {
+    background-color: var(--dark-background);
+    color: var(--font-color);
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: .8rem;
+    font-weight: bold;
+}
+
+.nav-right button:hover{
+    background-color: var(--hover);
+}
+
+.nav-right button:active{
+    background-color: var(--clicked);
+    transform: scale(0.95);
+}
+
+.profile-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+    object-fit: cover;
+}
+
+.profile-placeholder {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--light-background);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-right: 10px;
+}

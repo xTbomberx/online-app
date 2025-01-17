@@ -1,0 +1,134 @@
+:root {
+    --dark-background: #000B58;
+    --hover: #000f7c;
+    --clicked: #0013a3;
+    --light-background: #003161;
+    --border-color: #006A67;
+    --font-color: #FFF4B7;
+}
+
+
+.signup-container {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.logo{
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    align-items: center;
+}
+
+.logo h1 {
+    margin-bottom: 5px; /* Adjust this value to reduce the space below the h1 */
+    font-size: 1.5em;
+}
+
+.logo h2 {
+    margin-top: 5px; /* Adjust this value to reduce the space above the h2 */
+    opacity: 50%;
+    font-size: 1.1em;
+}
+
+.form-container {
+    border: 2px solid var(--border-color);
+    padding: 20px;
+    background-color: var(--light-background);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.form-group{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+label {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+input {
+    padding: 10px;
+    border: 2px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 1rem;
+    background-color: transparent;
+    color: var(--font-color)
+}
+
+.form-group{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5px;
+    
+}
+
+label {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+input {
+    padding: 10px;
+    border: 2px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 1rem;
+    background-color: transparent;
+    color: var(--font-color)
+}
+
+
+.password-input-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.password-input-container input {
+    flex: 1;
+    padding-right: 40px; /* Add padding to the right to make space for the icon */
+}
+
+.password-toggle-icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: var(--font-color);
+}
+
+.create-button {
+    border: none;
+    margin-top: 10px;
+    background-color: var(--dark-background);
+    border-radius: 5px;
+    color: var(--font-color);
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.create-button:hover{
+    background-color: var(--hover)
+}
+.create-button:active {
+    transform: scale(0.98);
+    background-color: var(--clicked);
+}
+
+.login-link a {
+    color: var(--border-color)
+}

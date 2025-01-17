@@ -1,0 +1,32 @@
+.Chatheader {
+    border: 1px solid yellow;
+    align-items: center;
+    margin: 0 auto;
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.avatar-container{
+    display:flex;
+    align-items: center;
+    border: 1px solid white;
+    width: 100%;
+    margin: 0;
+}
+
+.avatar-selectedUser img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+    object-fit: cover;
+
+}
+
+.avatar-userInfo {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px
+}

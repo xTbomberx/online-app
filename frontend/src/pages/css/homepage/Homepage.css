@@ -1,0 +1,21 @@
+.homepage-container {
+    display: flex;
+    width: 80%;
+    border: 1px solid white;
+    margin: 0 auto;
+    margin-top: 50px;
+    height: 600px;
+    border: 2px solid black;
+    padding:10px;
+}
+
+
+.homepage-container .right-side {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid white;
+    margin-left: 20px;
+    width: 100%;
+}
+

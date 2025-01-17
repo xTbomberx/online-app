@@ -1,0 +1,4 @@
+body {
+    margin: 0;
+    padding-top: 60px; /* Add padding to prevent content from being hidden behind the fixed navbar */
+}

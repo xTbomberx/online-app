@@ -1,0 +1,114 @@
+:root {
+    --dark-background: #000B58;
+    --hover: #000f7c;
+    --clicked: #0013a3;
+    --light-background: #003161;
+    --border-color: #006A67;
+    --font-color: #FFF4B7;
+}
+
+
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 5px;
+    width: 100%;
+    /* background-color: #f0f0f0; */
+}
+
+
+.message-container {
+    border: 1px solid orange;
+    flex: 1;
+    overflow-y: auto;
+    padding: 10px;
+
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.chat {
+    /* border: 1px solid red; */
+    display:flex;
+    
+    align-items: center;
+    margin-bottom: 20px;
+    max-width: 70%;
+}
+
+/* THIS WILL BE DEPEND ON IF THEY ARE SENDING OR RECEIVING */
+.chat.chat-end {
+    align-self: flex-end;
+    
+}
+
+.chat-start {
+    align-self: flex-start;
+    
+    
+}
+
+.chat-image img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+    object-fit: cover;
+
+    /* border: 1px solid white */
+}
+
+.chat-content {
+    display: flex;
+    flex-direction: column;
+    /* border: 1px solid white; */
+    margin-right: 10px;
+    border: 1px solid green;
+
+}
+
+.message-image {
+    width: 80px; /* Adjust the size as needed */
+    height: 80px; /* Adjust the size as needed */
+    margin-top: 5px;
+}
+
+.chat-header {
+    font-size: 0.8rem;
+    opacity: 0.4;
+    /* transform: translateX(30px); */
+}
+
+.chat-bubble {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    
+}
+
+.chat-text{
+    background-color: var(--light-background);
+    border-radius: 10px;
+    padding: 5px 10px;
+    /* border: 1px solid red; */
+}
+
+/* .chat-text::before{
+    content: "";
+    position: absolute;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 10px solid var(--light-background);
+    position: absolute;
+    right: -10px;
+    bottom: 5px;
+
+} */

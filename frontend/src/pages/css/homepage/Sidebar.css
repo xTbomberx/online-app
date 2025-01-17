@@ -1,0 +1,107 @@
+:root {
+    --dark-background: #000B58;
+    --hover: #000f7c;
+    --clicked: #0013a3;
+    --light-background: #003161;
+    --border-color: #006A67;
+    --font-color: #FFF4B7;
+}
+
+
+.sidebar {
+    border: 1px solid orange;
+    padding: 10px 0;
+    width: 250px;
+
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow-y: auto;
+    /* overflow: hidden; */
+}
+
+.sidebar-header {
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 10px;
+}
+
+
+
+
+.sidebar-contacts{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.sidebar-contacts img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+    object-fit: cover;
+}
+
+.contact-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    background-color: var(--dark-background);
+    border: none;
+    
+    width: 100%
+}
+
+.contact-item:hover {
+    background-color: var(--hover);
+}
+
+.contact-item:clicked {
+    background-color: var(--clicked);
+}
+
+.contact-item.selected {
+    background-color: var(--light-background);
+    border: 1px solid var(--border-color)
+}
+
+
+.span-onlineUser {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: green;
+    border-radius: 50%;
+}
+
+/* Hide scrollbar for Chrome, Safari, and Opera */
+.sidebar::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge, and Firefox */
+.sidebar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+
+.user-info .user-name {
+    color: var(--font-color)
+}
+
+.user-info .user-status{
+    color: whitesmoke
+}
+
+.div-onlineUsers {
+    border: 1px solid white;
+    padding: 10px; 
+}

@@ -1,0 +1,92 @@
+:root {
+    --dark-background: #000B58;
+    --hover: #000f7c;
+    --clicked: #0013a3;
+    --light-background: #003161;
+    --border-color: #006A67;
+    --font-color: #FFF4B7;
+}
+
+.message-input{
+    display: flex;
+    /* border: 1px solid red; */
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    position: relative;
+    
+}
+
+/* Component 1 */
+
+.image-preview {
+    position: absolute;
+    /* THIS MOVES IT UP PAST THE TOP OF THE PARENT ELEMENT UPWARDS x amount of pixels */
+    top: -85px;
+    left: 10px;
+}
+
+
+.image-preview img {
+    width: 80px; /* Adjust the size as needed */
+    height: 80px; /* Adjust the size as needed */
+}
+
+/* Component 1-b(DIV to position the X on top of the picture) */
+.image-container{
+    position: relative;
+    border: 1px solid yellow;
+}
+
+.image-container .image-x{
+    position: absolute;
+    bottom: -10px;
+    right: -10px;
+
+    background-color: var(--dark-background);
+    border: 1px solid var(--font-color);
+    border-radius: 50%;
+    color: var(--font-color);
+    cursor: pointer
+}
+
+/* Component 2 */
+.message-form {
+    width: 95%;
+    border: 1px solid white;
+    padding: 5px;
+    display: flex;
+}
+
+.message-form input{
+    flex: 1;
+}
+
+.hidden{
+    display: none;
+}
+
+
+.file-button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-left: 15px;
+}
+
+.file-button:disabled {
+    cursor: not-allowed;
+    opacity: 0.2;
+}
+
+
+.icon-image {
+    width: 20px;
+    height: 20px;
+    color: white;
+}

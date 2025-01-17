@@ -1,0 +1,37 @@
+:root {
+    --dark-background: #000B58;
+    --hover: #000f7c;
+    --clicked: #0013a3;
+    --light-background: #003161;
+    --border-color: #006A67;
+    --font-color: #FFF4B7;
+}
+
+
+.login-container {
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 40px;
+}
+
+
+.submit-button {
+    border: none;
+    margin-top: 10px;
+    background-color: var(--dark-background);
+    border-radius: 5px;
+    color: var(--font-color);
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.submit-button:hover{
+    background-color: var(--hover);
+}
+
+.submit-button:active{
+    transform: scale(0.95);
+    background-color: var(--clicked);
+}
