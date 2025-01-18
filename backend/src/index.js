@@ -68,10 +68,16 @@ app.use('/api/messages', messageRoutes)
 app.use(errorHandler);
 
 if (process.env.NODE_ENV === 'production') {
-    app.use(express.static(path.join(__dirname, 'public')));
+    const staticPath = path.join(__dirname, '../frontend/dist');
+    console.log(`Serving static files from ${staticPath}`);
+    app.use(express.static(staticPath));
 
     app.get('*', (req, res) => {
-        res.sendFile(path.join(__dirname, 'public', 'index.html'));
+        res.sendFile(path.join(staticPath, 'index.html'), (err) => {
+            if (err) {
+                res.status(500).send(err);
+            }
+        });
     });
 }
 
