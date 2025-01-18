@@ -4,7 +4,7 @@ const dotenv = require('dotenv');
 const cookieParser = require('cookie-parser');
 const cors = require('cors');
 
-const path =  require('path');
+const path = require('path');
 
 dotenv.config()
 // const app = express(); // create a server in socketIO
@@ -23,8 +23,8 @@ const errorHandler = require('./middleware/customErrorHandler');
 // ENV FILES //
 ///////////////
 const PORT = process.env.PORT
-const __dirname = path.resolve()
 
+const __dirname = path.resolve();
 ////////////////
 // MIDDLEWARE //
 ////////////////
