@@ -24,7 +24,7 @@ const errorHandler = require('./middleware/customErrorHandler');
 ///////////////
 const PORT = process.env.PORT
 
-const __dirname = path.resolve();
+// const __dirname = path.resolve();
 ////////////////
 // MIDDLEWARE //
 ////////////////
