@@ -1,33 +1,35 @@
-/////////////////////////////////////////////////
-const express = require('express')
-const dotenv = require('dotenv');
-const cookieParser = require('cookie-parser');
-const cors = require('cors');
+import express from 'express';
+import dotenv from 'dotenv';
+import cookieParser from 'cookie-parser';
+import cors from 'cors';
+import path from 'path';
 
-const path = require('path');
 
-dotenv.config()
-// const app = express(); // create a server in socketIO
-const { app, server } = require( './lib/socket.js')
+dotenv.config();
 
+// Create a server in socketIO
+import { app, server } from './lib/socket.js';
 
 ///////////////
 // IMPORTS ////
 ///////////////
-const connectDB = require('./lib/db.js');
-const errorHandler = require('./middleware/customErrorHandler');
-
-
+import connectDB from './lib/db.js';
+import errorHandler from './middleware/customErrorHandler.js';
+import authRoutes from './routes/authRoutes.js';
+import messageRoutes from './routes/messageRoutes.js';
 
 ///////////////
 // ENV FILES //
 ///////////////
-const PORT = process.env.PORT
-const __dirname = path.resolve();
-// const __dirname = path.resolve();
+const PORT = process.env.PORT || 3000;
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 ////////////////
 // MIDDLEWARE //
-////////////////
+//////////////// 
+
 app.use(express.json({
     limit: '2MB',
   }));
@@ -41,30 +43,15 @@ app.use(cors({
     credentials: true
 }))
 
-// Increase the payload size limit
-// app.use(bodyParser.json({limit: '50mb'}));
-// app.use(bodyParser.urlencoded({limit: '50mb', extended: true}));
-
 ////////////
 // ROUTES //
 ////////////
-const authRoutes = require('./routes/auth.route')
-const messageRoutes = require('./routes/message.route')
-
-
-
 app.use('/api/auth', authRoutes)
 app.use('/api/messages', messageRoutes)
-
 
 ///////////////
 // ERROR HANDLER //
 ///////////////
-// app.use((err,req,res,next) => {
-//     const { statusCode = 500, message = "Something went wrong"} = err;
-//     res.status(statusCode).render('error', { err });
-// })
-
 app.use(errorHandler);
 
 if (process.env.NODE_ENV === "production") {
@@ -73,7 +60,7 @@ if (process.env.NODE_ENV === "production") {
     app.get("*", (req, res) => {
       res.sendFile(path.join(__dirname, "../frontend", "dist", "index.html"));
     });
-  }
+}
 
 // becomes server.listen(instead of app) = because of SOCKET.IO
 const main = async() => {

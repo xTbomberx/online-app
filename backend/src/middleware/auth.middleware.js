@@ -1,13 +1,12 @@
 // TOKEN VALIDATION
-const jwt = require('jsonwebtoken');
-const User = require('../models/user.model.js');
-const asyncHandler = require('../middleware/asyncHandler');
+import jwt from 'jsonwebtoken';
+import User from '../models/user.model.js';
+import asyncHandler from '../middleware/asyncHandler.js';
 
-
-// PAYLOAD within the JWT/COOKIe = const token = jwt.sign({userId}
+// PAYLOAD within the JWT/COOKIE = const token = jwt.sign({userId}
 // TOKEN VALIDATION
 
-module.exports.protectedRoute = asyncHandler(async (req, res, next) => {
+export const protectedRoute = asyncHandler(async (req, res, next) => {
 
     // STEP 1 - EXTRACT TOKEN
     const token = req.cookies.jwt; // Ensure the cookie name matches
@@ -16,8 +15,8 @@ module.exports.protectedRoute = asyncHandler(async (req, res, next) => {
 
     // STEP 2 - TOKEN prescence CHECK
     if (!token) {
-        console.log('No token provided biiiiitch'); // Personal message for debugging
-        return res.status(401).json({ message: "Unauthorized - Yeah bitch u aint logged in yet" });
+        console.log('No token provided'); // Personal message for debugging
+        return res.status(401).json({ message: "Unauthorized - You are not logged in yet" });
     }
 
     // STEP 3 - TOKEN verification (decodes TOKEN)
@@ -38,11 +37,6 @@ module.exports.protectedRoute = asyncHandler(async (req, res, next) => {
         // STEP 5 - ATTACHING the the USER info to the REQUEST
         req.user = user; // user.email, user.fullName, user.profilepic
         console.log('Middleware executed - User:', user.email, user.fullName, user.profilePic); // Single logging statement
-        // console.log('///////////////////////////////////')
-        // console.log('User email:', user.email); // Personal message for debugging
-        // console.log('User fullname:', user.fullName);
-        // console.log('User profilePic:', user.profilePic);
-        // console.log('///////////////////////////////////')
 
         // STEP 6 - passes the INFORMation to NEXT middleware
         next();

@@ -1,6 +1,6 @@
-const { Server } = require("socket.io");
-const http = require('http');
-const express = require('express');
+import { Server } from "socket.io";
+import http from 'http';
+import express from 'express';
 
 const app = express();
 const server = http.createServer(app);
@@ -15,14 +15,13 @@ const io = new Server(server, {
     }
 })
 
+// used to Store ONLINE USERS
+const userSocketMap = {}; // {userId: socketId} -- DB/socket
 
 // this gives socket ID when USERid is passed
 function getReceiverSocketId(userId) {
     return userSocketMap[userId];
 }
-
-// used to Store ONLINE USERS
-const userSocketMap = {}; // {userId: socketId} -- DB/socket
 
 // STEP 1 - MAKE server LISTEN FOR connections
 //          socket = user who just connected
@@ -45,5 +44,4 @@ io.on("connection", (socket) => {
     });
 });
 
-module.exports = { io, app, server , getReceiverSocketId};
-
+export { io, app, server, getReceiverSocketId };
