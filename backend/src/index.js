@@ -15,8 +15,8 @@ import { app, server } from './lib/socket.js';
 ///////////////
 import connectDB from './lib/db.js';
 import errorHandler from './middleware/customErrorHandler.js';
-import authRoutes from './routes/authRoutes.js';
-import messageRoutes from './routes/messageRoutes.js';
+import authRoutes from './routes/auth.route.js';
+import messageRoutes from './routes/message.route.js';
 
 ///////////////
 // ENV FILES //
