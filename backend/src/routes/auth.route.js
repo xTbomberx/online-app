@@ -18,4 +18,4 @@ router.put('/update-profile', protectedRoute, updateProfile)
 
 router.get("/check", protectedRoute, checkAuth)
 
-module.exports = router;
+export default router;
