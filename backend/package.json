@@ -6,7 +6,8 @@
   "type": "commonjs",
   "scripts": {
     "dev": "nodemon src/index.js",
-    "start": "node src/index.js"
+    "start": "node src/index.js",
+     "build": "cd ../frontend && npm run build && cd ../backend && mkdir -p public && cp -r ../frontend/dist/* public/"
   },
   "keywords": [],
   "author": "",
